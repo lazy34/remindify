@@ -141,7 +141,7 @@ async function loadData() {
             </div>
           </div>
           <div class="container-deleteUpdate">
-            <img src="./assets/delete.png" alt="Delete">
+            <span>x</span>
           </div>
         `;
 
@@ -316,7 +316,7 @@ addButton.addEventListener("click", async () => {
       </div>
     </div>
     <div class="container-deleteUpdate">
-      <span>✕</span>
+      <span>x</span>
     </div>
   `;
 

@@ -609,10 +609,10 @@ input[type="date"] {
   position: relative;
 }
 
-.container-deleteUpdate img {
-  height: 20px;
-  width: 20px;
+.container-deleteUpdate span{
+  cursor: pointer;
 }
+
 
 /* Sperate reminder container for each container */
 .visible {
