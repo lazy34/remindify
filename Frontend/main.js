@@ -127,6 +127,9 @@ async function loadData() {
         parentDiv.classList.add("reminder-container");
         parentDiv.style.backgroundColor = generateLightColor();
 
+        console.log(reminder.remindTime);
+        
+
         const reminderHTML = `
           <div class='remainder-link'>
             <a href='${reminder.link}' target='_blank'>${redirectSVG}</a>
@@ -136,7 +139,7 @@ async function loadData() {
               <p>${reminder.title}</p>
             </div>
             <div class="container-remimdTime">
-              <p>Reminds <span>on</span></p>
+              <b><p>Reminds <span>on</span></p></b>
               <p><span>${reminder.remindTime}</span></p>
             </div>
           </div>
@@ -296,8 +299,12 @@ addButton.addEventListener("click", async () => {
     renderTime = `${dateValue} ${timeValue}`;
   } else {
     const currentDate = new Date();
+    console.log(currentDate.getDate());
+    
     currentDate.setDate(currentDate.getDate() + parseInt(timerDaySelect.value));
-    renderTime = currentDate.toISOString();
+    console.log(typeof(currentDate));
+    
+    renderTime = currentDate;
   }
 
   
@@ -311,7 +318,7 @@ addButton.addEventListener("click", async () => {
         <p>${whatsNew.value}</p>
       </div>
       <div class="container-remimdTime">
-        <p>Reminds <span>on</span></p>
+        <b><p>Reminds <span>on</span></p></b>
         <p><span>${renderTime}</span></p>
       </div>
     </div>

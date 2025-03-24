@@ -584,7 +584,7 @@ input[type="date"] {
   width: 90%;
   font-size: 0.7rem;
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: space-between;
   flex-direction: column;
   height: auto;
@@ -594,7 +594,9 @@ input[type="date"] {
   font-size: 13px;
   margin-bottom: 10px;
   color: var(--font-color);
+  text-align: center;
 }
+
 
 .container-deleteUpdate {
   height: 25px;
@@ -611,6 +613,10 @@ input[type="date"] {
 
 .container-deleteUpdate span{
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
