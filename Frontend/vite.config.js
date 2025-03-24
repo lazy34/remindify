@@ -68,7 +68,41 @@ export default defineConfig({
               },
             },
           },
+          {
+            urlPattern: /\.html$/, // Cache HTML files
+            handler: "CacheFirst",
+            options: {
+              cacheName: "html-cache",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
+          {
+            urlPattern: /\.css$/, // Cache CSS files
+            handler: "CacheFirst",
+            options: {
+              cacheName: "css-cache",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
+          {
+            urlPattern: /\.js$/, // Cache JS files
+            handler: "CacheFirst",
+            options: {
+              cacheName: "js-cache",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
         ],
+        
       },
       devOptions: {
         enabled: true,

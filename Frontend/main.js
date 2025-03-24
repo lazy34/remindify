@@ -37,6 +37,7 @@ const addButton = document.querySelector("#add");
 const alertBar = document.querySelector(".alert");
 const alertClosebtn = document.querySelector(".alert>span:nth-child(3)");
 
+
 // Color selection
 const root = document.documentElement;
 const redColor = getComputedStyle(root).getPropertyValue("--primary-color-red");
@@ -88,6 +89,9 @@ function schedulePushNotification(title, options) {
     });
   }
 }
+
+
+
 
 // Enable or disable custom date/time inputs
 timerDaySelect.addEventListener("change", () => {
@@ -286,7 +290,7 @@ addButton.addEventListener("click", async () => {
   let renderTime;
   if (timerDaySelect.value === "custom") {
     const dateValue = customDateInput.value;
-    const timeValue = customTimeInput.value;
+    const timeValue = customTimeInput.value; 
 
     // Combine date and time into a single string in a standard format
     renderTime = `${dateValue} ${timeValue}`;
@@ -295,6 +299,8 @@ addButton.addEventListener("click", async () => {
     currentDate.setDate(currentDate.getDate() + parseInt(timerDaySelect.value));
     renderTime = currentDate.toISOString();
   }
+
+  
 
   const reminderHTML = `
     <div class='remainder-link'>
@@ -340,6 +346,7 @@ addButton.addEventListener("click", async () => {
   whatsNew.value = "";
   whatsAbout.value = "";
 });
+
 
 // Schedule a push notification for a reminder
 function scheduleReminderNotification(reminderData) {
